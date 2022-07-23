@@ -1,8 +1,27 @@
 import React from 'react'
+
+// React-Router
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+
+// Component
+import Login from './components/login/Login'
+import Cadastry from './components/login/Login'
+import Home from './components/home/Home'
+
+// Styles
+import './sass/global.scss'
+
 function App() {
  
   return (
     <div className="App">
+      <Router>
+        <Routes>
+          <Route path={'/'} element={<Home />}/>
+          <Route path={'/login'} element={<Login />}/>
+          <Route path={'/cadastry'} element={<Cadastry />}/>
+        </Routes> 
+      </Router>
     </div>
   )
 }
