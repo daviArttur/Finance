@@ -7,9 +7,11 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Login from './components/login/Login'
 import Cadastry from './components/login/Login'
 import Home from './components/home/Home'
+import { Provider } from 'react-redux'
 
 // Styles
 import './sass/global.scss'
+
 
 function App() {
  
@@ -17,7 +19,7 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route path={'/'} element={<Home />}/>
+          <Route path={'/'} element={<Login />}/>
           <Route path={'/login'} element={<Login />}/>
           <Route path={'/cadastry'} element={<Cadastry />}/>
         </Routes> 
