@@ -1,0 +1,17 @@
+@import '../../sass/varsAndMixins.scss';
+
+.button {
+  background-color: $black;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: large;
+  height: 3rem;
+  width: 8rem;
+  transition: .5s;
+  
+  &:hover {
+    box-shadow: 5px 5px 5px black;
+    transition: .1s;
+  }
+}
