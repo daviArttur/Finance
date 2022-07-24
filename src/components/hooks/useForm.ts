@@ -1,4 +1,4 @@
-import React, { ChangeEvent, ChangeEventHandler } from 'react'
+import React, { ChangeEvent } from 'react'
 
 interface Props {
   option: 'email' | 'password' | 'default'
@@ -37,21 +37,20 @@ function useForm({ option }: Props) {
       }
     }
   
-    return regex
+    return { regex }
   }
 
   function onChange({ target }: ChangeEvent<HTMLInputElement>) {
 
     setValue(target.value)
     const receiveWarningToRegex = validate()
-    const verifyIfRegexContainWarning = typeof receiveWarningToRegex === 'object'
   
     if ( target.value === '') {
       setWarningWasActived(true)
       return setWarning('Preencha um valor')
     }
     
-    if (verifyIfRegexContainWarning && warning !== '' || verifyIfRegexContainWarning && warningWasActived) {
+    if (receiveWarningToRegex.warningMessage && warning !== '' || receiveWarningToRegex.warningMessage && warningWasActived) {
       
       return setWarning(receiveWarningToRegex.warningMessage)
     }
