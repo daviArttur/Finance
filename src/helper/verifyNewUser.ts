@@ -17,7 +17,7 @@ export class verifyIfNewUserDataIsValid {
   emailIsEqual() {
     const response = this.arrayUsers.find((user) => user.email === this.email)
     if (response) {
-      return { valid: false, message: 'Já existe uma conta com esse email' }
+      return { valid: false, message: "Já existe uma conta com esse email" }
     } else {
       return { valid: true }
     }
@@ -26,7 +26,7 @@ export class verifyIfNewUserDataIsValid {
   nameIsEqual() {
     const response = this.arrayUsers.find((user) => user.name === this.name)
     if (response) {
-      return { valid: false, message: 'Já existe uma conta com esse nome' }
+      return { valid: false, message: "Já existe uma conta com esse nome" }
     } else {
       return this.emailIsEqual()
     }
@@ -35,14 +35,14 @@ export class verifyIfNewUserDataIsValid {
   nameAndEmailIsEqual() {
     const response = this.arrayUsers.find((user) => user.name === this.name && user.email === this.email)
     if (response) {
-      return { valid: false, message: 'Já existe um usuário com o mesmo nome e email' }
+      return { valid: false, message: "Já existe um usuário com o mesmo nome e email" }
     } else {
       return this.nameIsEqual()
     }
   }
 
   checkIfExistUsers() {
-    const verifyUsersInLocalStorage = window.localStorage.getItem('users')
+    const verifyUsersInLocalStorage = window.localStorage.getItem("users")
     if ( verifyUsersInLocalStorage ) {
       const users: dataUserInterface[] = JSON.parse(verifyUsersInLocalStorage)
       this.arrayUsers = users
