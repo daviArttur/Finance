@@ -55,9 +55,7 @@ function useForm({ option }: Props) {
       return setWarning(receiveWarningToRegex.warningMessage)
     }
 
-    else {
-      setWarning('')
-    }
+   
   }
 
   return {
