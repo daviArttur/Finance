@@ -1,8 +1,16 @@
 .input {
   border: 2px solid black;
   border-radius: 3px;
+  cursor: pointer;
   height: 2rem;
   font-size: 1rem;
-  padding: .5rem;
   outline: 0;
+  position: relative;
+  padding: .5rem;
+}
+
+.showPassword {
+  position: absolute;
+  top: 35px;
+  right: 10px;
 }
