@@ -1,7 +1,7 @@
-import React, { ChangeEvent } from 'react'
+import React, { ChangeEvent } from "react"
 
 // Styles
-import styles from './input.module.scss'
+import styles from "./input.module.scss"
 
 type Props = {
   onChange: (event: ChangeEvent<HTMLInputElement>) => void
@@ -22,9 +22,10 @@ const Input = ({ onChange, value, warning, id, type }: Props) => {
         onChange={onChange}
         data-testid={id}
         className={styles.input}
+        style={{ borderColor: warning ? "red" : "black" }}
       />
       {warning && (
-        <span className='warning'>{ warning }</span>
+        <span className="warning">{ warning }</span>
       )}
     </>
   )
